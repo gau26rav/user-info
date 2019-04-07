@@ -66,3 +66,57 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+Methods for fetch 
+clone() - As the method implies this method creates a clone of the response.
+redirect() - This method creates a new response but with a different URL.
+arrayBuffer() - In here we return a promise that resolves with an ArrayBuffer.
+formData() - Also returns a promise but one that resolves with FormData object.
+blob() - This is one resolves with a Blob.
+text() - In this case it resolves with a string.
+json() - Lastly we have the method to that resolves the promise with JSON.
+
+const url = 'https://randomuser.me/api';
+// The data we are going to send in our request
+let data = {
+    name: 'Sara',
+    address : 'abc',
+    age : 20
+}
+// The parameters we are gonna pass to the fetch function
+let fetchData = { 
+    method: 'POST', 
+    body: data,
+    headers: new Headers()
+}
+fetch(url, fetchData)
+.then(function() {
+    // Handle response you get from the server
+});
+
+##JSX Compilation
+Babel compiles JSX down to React.createElement() calls.
+
+These two examples are identical:
+
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+React.createElement() performs a few checks to help you write bug-free code but essentially it creates an object like this:
+
+// Note: this structure is simplified
+const element = {
+  type: 'h1',
+  props: {
+    className: 'greeting',
+    children: 'Hello, world!'
+  }
+};
