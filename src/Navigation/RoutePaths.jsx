@@ -15,12 +15,10 @@ const routing = (
         </ul>
     {/* This div will contain the entire frames to be loaded. */}
     <Switch>
-    <div id="container">
         <Route path = "/" exact={true} component={App}></Route>
         <Route path = "/sell" component={SellComponent}></Route>
         <Route path = "/contact" component={ContactUs}></Route>
         <Route component={NotFound}/>
-    </div>
     </Switch>
 </Router>);
 

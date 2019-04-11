@@ -39,16 +39,16 @@ export function PersonalInfo (props) {
 						</tr>
 						<tr>
 							<td>User Name</td>
-							<td>{name}</td>
+							<td>{name}</td> 
 						</tr>
 						<tr>
 							<td>Website</td>
 							<td>{website}</td>
 						</tr>
-                        <tr>
+                        {address && <tr>
 							<td>Address</td>
-							<td>{`${address.street}, ${address.suite}, ${address.city}`}</td>
-						</tr>
+							<td>{`${address.street }, ${address.suite}, ${address.city}`}</td>
+						</tr>}
                         <tr>
 							<td>User Name</td>
 							<td>{name}</td>
